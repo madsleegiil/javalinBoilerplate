@@ -6,6 +6,7 @@ class AppTest {
 
     @Test
     fun testApp() {
-        startApp(true)
+        startH2()
+        startApp()
     }
 }

@@ -7,4 +7,4 @@ private val defaultProperties = hashMapOf(
     "javalinPort" to "7000"
 )
 
-fun environmentProperty(key: String) = System.getenv(key) ?: defaultProperties[key]
+fun environmentProperty(key: String) = System.getenv(key) ?: defaultProperties[key] ?: throw RuntimeException("No environment property with key $key")

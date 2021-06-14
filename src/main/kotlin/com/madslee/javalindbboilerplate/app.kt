@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory
 
 private val logger = LoggerFactory.getLogger("Main")
 
-fun startApp(startH2Database: Boolean) {
-    val database = Database(startH2Database)
+fun startApp() {
+    val database = Database()
     database.getDatasource()
 
     val javalin = Javalin.create().start(environmentProperty("javalinPort")!!.toInt())
@@ -20,5 +20,5 @@ fun startApp(startH2Database: Boolean) {
 }
 
 fun main() {
-    startApp(false)
+    startApp()
 }
